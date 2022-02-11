@@ -15,16 +15,17 @@ const command = process.argv[2];
 const members = require("./members");
 
 if (command === "list") {
-  runListCommand();
+  runListCommand(members);
 } else {
   console.log(`Command "${command}" not found. Try "list" instead.`);
 }
 
-function runListCommand() {
-for (let i=0;i<members.length;i++){
-console.log(`${members[i].firstName} ${members[i].lastName}`)
+function runListCommand(array) {
+  console.log("Called the list command");
+  array.forEach(item => {console.log(`${item.firstName} ${item.lastName}`)
+ })
+
 }
-console.log("Called the list command");
-}
+
 
 
